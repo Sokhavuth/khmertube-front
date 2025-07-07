@@ -15,5 +15,5 @@ export async function load({ locals, params, fetch }){
     const thumb = post.thumb
     const title = post.title
     
-    return {post, user, randomPosts, settings, thumb, title}
+    return {post, user, authorName, randomPosts, settings, thumb, title}
 }

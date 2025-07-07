@@ -18,7 +18,7 @@ export async function handle({ event, resolve }) {
             try{
                 const session = true //await sessionDb.getSession(event.locals, token)
                 if(session){
-                    const user = jwt.verify(session.jwt, SECRET_KEY)
+                    //const user = jwt.verify(session.jwt, SECRET_KEY)
                     event.locals.user = user
                 }else{
                     console.log('jwt is expired!')
