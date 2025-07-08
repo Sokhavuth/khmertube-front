@@ -6,12 +6,12 @@
     <div class="container">
         {#each data.posts as item}
             <div class="wrapper">
-                <a href="/post/{item.id}">
+                <a href="/post/{item._id}">
                     <img src={item.thumb} alt=''/>
                     <img class="play-icon" src="/images/play.png" alt=''/>
                 </a>
                 <div class="date">{(new Date(item.date)).toLocaleDateString("it-IT")}</div>
-                <a class="title" href="/post/{item.id}">
+                <a class="title" href="/post/{item._id}">
                     <div >{item.title}</div>
                 </a>
             </div>
