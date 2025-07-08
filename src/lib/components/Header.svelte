@@ -63,10 +63,10 @@
                 <h1>{ data.settings.siteTitle }</h1>
             </a>
         </div>
-        <from class="search" method="post">
+        <form class="search" method="post" action="/search?/search">
             <input type="text" name="q" placeholder="Search..." required />
             <input type="submit" value="ស្វែង​រក" />
-        </from>
+        </form>
     </div>
 </header>
 

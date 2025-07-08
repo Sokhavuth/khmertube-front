@@ -11,7 +11,10 @@
     .Footer .wrapper{
         text-align: center;
         padding: 50px 0;
-        background: var(--background-dark);
+        background: rgb(44, 44, 44);
         color: white;
+    }
+    .Footer .wrapper a{
+        color: orange;
     }
 </style>

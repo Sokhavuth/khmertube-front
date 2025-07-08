@@ -540,6 +540,9 @@
         text-align: left;
         background: transparent;
     }
+    .Home .container .wrapper .title{
+        color: var(--link);
+    }
     .Home button:hover,
     .Home .container .wrapper .title:hover{
         cursor: pointer;

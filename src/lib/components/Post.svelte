@@ -61,10 +61,10 @@
         <div class='post-bottom'>
             
             {#if data.user}
-            <div class='edit'>
-                <a href={`/admin/post/edit/${post.id}`}><img src="/images/edit.png" alt=''/></a>
-                <a href={`/admin/post/delete/${post.id}`}><img src="/images/delete.png" alt=''/></a>
-            </div>
+            <span class='edit'>
+                <a href={`/admin/post/edit/${post._id}`}><img src="/images/edit.png" alt=''/></a>
+                <a href={`/admin/post/delete/${post._id}`}><img src="/images/delete.png" alt=''/></a>
+            </span>
             {/if}
         </div>
         <div id="disqus_thread"></div>
@@ -109,7 +109,7 @@
 }
 .Post .main .content{
     margin: 20px 0;
-    font: 14px/1.5 Courgette, Nokora;
+    font: 14px/1.5 Courgette, HandWriting;
 }
 :global(.Post .main .content img){
     width: 100%;
@@ -153,17 +153,13 @@
     text-overflow: ellipsis;
 }
 .Post .main .post-bottom{
-    display: grid;
-    grid-template-columns: auto auto;
-}
-.Post .main .post-bottom .edit{
     text-align: right; 
+}
+.Post .main .post-bottom .edit a{
+    padding: 0 3px 0 0;
 }
 .Post .main .post-bottom .edit img{
     width: 30px;
-}
-.Post .main .social-media{
-    display: inline-block;
 }
 
 @media only screen and (max-width:600px){

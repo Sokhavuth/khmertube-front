@@ -1,7 +1,7 @@
 
 export async function load({ locals, params, fetch }){
     const id = params.id
-    const user = locals.user?.name
+    const user = locals?.user
 
     const settings = await locals.settings(locals)
     const response = await fetch(`${locals.apiUrl}/api/post/${id}`)
