@@ -463,7 +463,7 @@
         position: absolute;
         top: 0;
         left: 0;
-        background: var(--background-dark);
+        background: rgb(44, 44, 44);
         color: white;
         text-align: center;
         font-family: Vidaloka, OdorMeanChey;
