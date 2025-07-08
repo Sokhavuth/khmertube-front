@@ -9,7 +9,7 @@
     <title>{page.data.title}</title>
 </svelte:head>
 
-<section class='Login'>
+<section class='Login' >
     <div class='title'>ចុះ​ឈ្មោះ​ចូល​ផ្នែក​​គ្រប់គ្រង</div>
  
     <form method='post' >
