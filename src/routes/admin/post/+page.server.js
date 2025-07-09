@@ -15,6 +15,7 @@ export async function load({ locals, url, fetch }) {
 
 export const actions = {
 	create: async ({ request, locals, cookies }) => {
+        const settings = await locals.settings(locals)
 		const data = await request.formData()
         
         const title = data.get('title')
@@ -34,9 +35,16 @@ export const actions = {
         )
         
 		if(validate){
-            locals.body = {title, content, categories, thumb, datetime, videos}
-            await postDb.createPost(locals)
-            return {success: true, message: 'ការផ្សាយ​មួយ​ត្រូវ​បាន​បង្កើត​ឡើង'}
+            const body = {title, content, categories, thumb, datetime, videos}
+            const option = {
+			    method: 'POST',
+			    body: JSON.stringify(body),
+			    headers: { 'Content-Type': 'application/json' }
+		    }
+            const response = await fetch(`${locals.apiUrl}/api/admin/${settings.dashboard}/post`, option)
+            if(response.ok){
+                return {success: true, message: 'ការផ្សាយ​មួយ​ត្រូវ​បាន​បង្កើត​ឡើង'}
+            }
         }else{
             return {success: false, message: "ទិន្នន័យ​បញ្ជូន​មក​មិន​ត្រឹមត្រូវ​ទេ!"}
         }
