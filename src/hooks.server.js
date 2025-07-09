@@ -1,7 +1,7 @@
 
 const mode = import.meta.env.MODE
 import settings from "$lib/settings.js"
-
+//
 export async function handle({ event, resolve  }) {
     if(mode === "development"){
         event.locals.apiUrl = 'http://localhost:8000'
