@@ -92,7 +92,7 @@ function myFunction() {
                 </div>
                 <a href="/page/66b17b1e944f187d47506cda" class={`contact ${contact}`}>ទំនាក់ទំនង</a>
                 <a href="/page/66b17b48944f187d47506cdc" class={`about ${about}`}>អំពីយើង​ខ្ញុំ</a>
-                <a href="https://khmerweb-tv.deno.dev/admin">ចូល​ក្នុង</a>
+                <a href="/admin">ចូល​ក្នុង</a>
                 <a href="javascript:void(0);" class="icon" onclick={myFunction}>
                     <i class="fa fa-bars"></i>
                 </a>
