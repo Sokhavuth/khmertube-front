@@ -1,10 +1,16 @@
 <script>
     let { data } = $props()
+    let Posts = $state(data.posts)
+    async function getPosts(e){
+        const response = await fetch(`/search/${e.target.value}/${data.q}`)
+        const { posts } = await response.json()
+        Posts = posts
+    }
 </script>
 
 <section class="Category region" data-sveltekit-reload>
     <div class="container">
-        {#each data.posts as item}
+        {#each Posts as item}
             <div class="wrapper">
                 <a href="/post/{item._id}">
                     <img src={item.thumb} alt=''/>
@@ -16,6 +22,19 @@
                 </a>
             </div>
         {/each}
+    </div>
+    <div class="pagination">
+        <span>ទំព័រ </span>
+        <select onchange={ getPosts }>
+            {#each [...Array(data.lastPage).keys()] as pageNumber}
+                {#if pageNumber+1 == data.page}
+                <option selected>{pageNumber+1}</option>
+                {:else}
+                <option>{pageNumber+1}</option>
+                {/if}
+            {/each}
+        </select>
+        <span> នៃ {data.lastPage}</span>
     </div>
 </section>
 
@@ -51,6 +70,10 @@
 .Category .container .wrapper .title{
     padding-top: 0;
     color: black;
+}
+.Category .pagination{
+    text-align: center;
+    padding-bottom: 30px;
 }
 
 @media only screen and (max-width:600px){
