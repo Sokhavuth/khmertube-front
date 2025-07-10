@@ -43,14 +43,7 @@ export const actions = {
         )
         
 		if(validate){
-            let body = {}
-            if(categories.includes('news')){
-                body = {title, content, categories, thumb, date, videos, author, createdAt: new Date()}
-       
-            }else{ 
-                body = {title, content, categories, thumb, date, videos, author}
-            }
-            
+            const body = {title, content, categories, thumb, date, videos, author}
             const access_token = cookies.get('khmertube_access_token')
             const option = {
 			    method: 'POST',
