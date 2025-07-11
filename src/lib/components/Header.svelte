@@ -45,7 +45,7 @@
             <input type="submit" value="ស្វែង​រក" />
         </form>
 
-        <div class="logout">
+        <div class="login">
             <a href="/admin">ចូល​ក្នុង</a> | <a href="/admin/user">ចុះ​ឈ្មោះ</a>
         </div>
     </div>
@@ -94,7 +94,7 @@
         font-family: Vidaloka, OdorMeanChey;
         padding: 1px 5px;
     }
-    header .inner .logout{
+    header .inner .login{
         text-align: right;
     }
 
@@ -104,7 +104,7 @@
             padding: 30px 10px;
             grid-gap: 20px;
         }
-        header .inner .date{
+       header .inner .login{
             text-align: center;
         }
     }
