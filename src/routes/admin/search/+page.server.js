@@ -1,7 +1,8 @@
 
 export async function load({ locals }){
+    locals.cookies = cookies
     const user = locals.user
-    const settings = await locals.settings()
+    const settings = await locals.settings(locals)
     const title = 'ទំព័រ​ស្វែង​រក'
     const posts = locals.posts
     

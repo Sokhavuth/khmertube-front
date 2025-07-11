@@ -1,6 +1,7 @@
 import { redirect } from '@sveltejs/kit'
 
 export async function load({ params, locals, url, cookies }){
+    locals.cookies = cookies
     const user = locals.user
     if(!user){throw redirect(307, '/login')}
     const id  = params.id
@@ -24,11 +25,9 @@ export async function load({ params, locals, url, cookies }){
 
 export const actions = {
     update: async ({ request, locals, cookies, url }) => {
-        const settings = await locals.settings(locals)
         const data = await request.formData()
 
         const id = data.get('id')
-        const navPage = url.searchParams.get('p') || 1
 
         if(locals.user.role !== 'Admin'){
             if(data.get('author') !== locals.user.id){
@@ -55,7 +54,7 @@ export const actions = {
 	    if(validate){
             const body = {title, content, categories, thumb, date, videos}
             const access_token = cookies.get('khmertube_access_token')
-            const response = await fetch(`${locals.apiUrl}/api/admin/post/edit/${id}?amount=${settings.dashboard}&page=${navPage}`, {
+            const response = await fetch(`${locals.apiUrl}/api/admin/post/edit/${id}`, {
                 method: "PUT",
                 body: JSON.stringify(body),
                 headers: {

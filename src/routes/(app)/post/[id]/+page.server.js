@@ -1,8 +1,8 @@
 
-export async function load({ locals, params, fetch }){
+export async function load({ locals, params, fetch, cookies }){
     const id = params.id
     const user = locals?.user
-
+    locals.cookies = cookies
     const settings = await locals.settings(locals)
     const response = await fetch(`${locals.apiUrl}/api/post/${id}`)
     const { post } = await response.json()

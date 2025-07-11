@@ -1,6 +1,7 @@
 
-export async function load({ locals, params, fetch }){
-    const settings = await locals.settings()
+export async function load({ locals, params, fetch, cookies }){
+    locals.cookies = cookies
+    const settings = await locals.settings(locals)
     const response = await fetch(`${locals.apiUrl}/api/page/${params.id}`)
     const { page, randomPosts } = await response.json()
     const thumb = page.thumb

@@ -1,6 +1,6 @@
 
-export async function load({ locals }){
-    const settings = await locals.settings()
+export async function load({ locals, cookies }){
+    const settings = await locals.settings(cookies)
     const title = 'ទំព័រ​ស្វែង​រក'
     const { posts, lastPage, page, q } = locals.data
     
@@ -8,8 +8,8 @@ export async function load({ locals }){
 }
 
 export const actions = {
-    search: async ({ locals, request, url }) => {
-        const settings = await locals.settings()
+    search: async ({ locals, request, url, cookies }) => {
+        const settings = await locals.settings(cookies)
         const data = await request.formData()
         const q = data.get('q')
         const page = url.searchParams.get('page') || 1

@@ -1,6 +1,7 @@
 import { redirect } from '@sveltejs/kit'
 
 export async function load({ locals, url, fetch, cookies }) {
+    locals.cookies = cookies
     const user = locals.user
     if(!user){throw redirect(307, '/login')}
     const settings = await locals.settings(locals)
@@ -21,7 +22,7 @@ export async function load({ locals, url, fetch, cookies }) {
 
 export const actions = {
 	create: async ({ request, locals, cookies }) => {
-        const settings = await locals.settings(locals)
+        
 		const data = await request.formData()
         
         const title = data.get('title')

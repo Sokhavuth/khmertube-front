@@ -1,9 +1,10 @@
 import { json } from '@sveltejs/kit'
 
-export async function POST({ request, locals, params, fetch }){
+export async function POST({ request, locals, params, fetch, cookies }){
+	locals.cookies = cookies
     const category = params.category
     const { thumbs } = await request.json()
-	const settings = await locals.settings()
+	const settings = await locals.settings(locals)
 
     const response = await fetch(`${locals.apiUrl}/api/playlist/${category}?amount=${settings.frontend}`, {
 			method: 'POST',

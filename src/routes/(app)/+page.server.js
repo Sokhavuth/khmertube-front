@@ -1,6 +1,7 @@
 
 export async function load({ locals, fetch, cookies }) {
-    const settings = await locals.settings()
+    locals.cookies = cookies
+    const settings = await locals.settings(locals)
     const response = await fetch(`${locals.apiUrl}/api?amount=${settings.frontend}`)
     const data = await response.json()
 

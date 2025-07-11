@@ -1,9 +1,16 @@
 //settings.js
 
-async function setup(req){
-    //const module = await import('$lib/db/setting.js')
-    //let set = await module.default.getSettings(req, 1)
-    let setting = false //set[0]
+async function setup(locals){
+    const access_token = locals.cookies.get('khmertube_access_token')
+    const response = await fetch(`${locals.apiUrl}/api/admin/setting?amount=1`,{
+        method: "GET",
+        headers: {
+            'X-User-Header': `${access_token}`
+        }
+    })
+    const { items } = await response.json()
+    
+    let setting = items[0]
     let settings = {}
 
     if(setting){
