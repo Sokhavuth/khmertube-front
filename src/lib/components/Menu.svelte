@@ -118,11 +118,11 @@ nav{
     color: black;
   }
   .topnav a:hover {
-    background-color: var(--background-dark);
+    background-color: rgb(44, 44, 44);
     color: white;
   }
   .topnav a.active, div.active {
-    background-color: var(--background-dark);
+    background-color: rgb(44, 44, 44);
     color: white;
   }
   .topnav .icon {

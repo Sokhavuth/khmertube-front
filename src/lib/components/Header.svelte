@@ -68,7 +68,7 @@
         display: grid;
         grid-template-columns: 30% auto 20%;
         align-items: center;
-        padding: 30px 0;
+        padding: 20px 0;
     }
     header .inner .logo{
         display: grid;
