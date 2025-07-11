@@ -1,8 +1,5 @@
 <script>
     let { data } = $props()
-    let date = new Date()
-    let datetime = $state('')
-
     var i = 0
     function move() {
         if (i == 0) {
@@ -25,26 +22,6 @@
     $effect(()=>{
         move()
     })
-
-    function startTime() {
-        const today = new Date();
-        let h = today.getHours();
-        let m = today.getMinutes();
-        let s = today.getSeconds();
-        m = checkTime(m);
-        s = checkTime(s);
-        datetime =  h + ":" + m + ":" + s;
-        setTimeout(startTime, 1000);
-    }
-
-    function checkTime(i) {
-        if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
-        return i;
-    }
-
-    $effect(() => (
-        startTime()
-    ))
 </script>
 
 <div id="myProgress">
@@ -52,21 +29,25 @@
 </div>
 <header>
     <div class="inner region">
-        <div class="date">
-            <span>
-                <p>{ date.toLocaleDateString('it-IT') }</p>
-                <p>{ datetime }</p>
-            </span>
-        </div>
-        <div class='title-wrapper'>
-            <a class="title" href='/' aria-label="title">
-                <h1>{ data.settings.siteTitle }</h1>
+        <div class="logo">
+            <a href="/">
+                <img src="/images/siteLogo.png" alt='' />
             </a>
+            <div class='title-wrapper'>
+                <a class="title" href='/' aria-label="title">
+                    <h1>{data.settings.siteTitle}</h1>
+                </a>
+            </div>
         </div>
+        
         <form class="search" method="post" action="/search?/search">
             <input type="text" name="q" placeholder="Search..." required />
             <input type="submit" value="ស្វែង​រក" />
         </form>
+
+        <div class="logout">
+            <a href="/admin">ចូល​ក្នុង</a> | <a href="/admin/user">ចុះ​ឈ្មោះ</a>
+        </div>
     </div>
 </header>
 
@@ -85,28 +66,36 @@
     }
     header .inner{
         display: grid;
-        grid-template-columns: 25% auto 25%;
+        grid-template-columns: 30% auto 20%;
         align-items: center;
         padding: 30px 0;
     }
-    header .inner .date span{
-        text-align: center;
-        width:auto;
+    header .inner .logo{
+        display: grid;
+        grid-template-columns: 50px auto;
+        grid-gap: 10px;
+        align-items: center;
+    }
+    header .inner .logo img{
+        width: 100%;
     }
     header .inner .title{
-        text-align: center;
+        text-align: left;
         color: rgb(88, 88, 88);
         font-family: Moul;
-        font-size: 25px;
+        font-size: 20px;
     }
     header .inner .search{
-        text-align: right;
+        text-align: center;
         display: grid;
-        grid-template-columns: auto 25%;
+        grid-template-columns: auto 80px;
     }
     header .inner .search input{
         font-family: Vidaloka, OdorMeanChey;
         padding: 1px 5px;
+    }
+    header .inner .logout{
+        text-align: right;
     }
 
     @media only screen and (max-width: 600px){
