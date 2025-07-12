@@ -1,12 +1,18 @@
 <script>
 	import Layout from "$lib/components/admin/Layout.svelte"
 	let { data } = $props()
+	let Posts = $state(data.posts)
+	async function getPosts(e){
+        const response = await fetch(`/admin/search/${e.target.value}/${data.q}`)
+        const { posts } = await response.json()
+        Posts = posts
+    }
 </script>
 
 <Layout {data} >
 	{#snippet editor()}
 	<div class="editor">
-		{#each data.posts as post}
+		{#each Posts as post}
 		<div class="item">
 			<a class="thumb" href={`/post/${post._id}`}>
 				<img src={post.thumb} alt=""/>
@@ -29,6 +35,19 @@
 		</div>
 		{/each }
 	</div>
+	<div class="pagination">
+        <span>ទំព័រ </span>
+        <select onchange={ getPosts }>
+            {#each [...Array(data.lastPage).keys()] as pageNumber}
+                {#if pageNumber+1 == data.page}
+                <option selected>{pageNumber+1}</option>
+                {:else}
+                <option>{pageNumber+1}</option>
+                {/if}
+            {/each}
+        </select>
+        <span> នៃ {data.lastPage}</span>
+    </div>
 	{/snippet}
 </Layout>
 
@@ -91,6 +110,13 @@
 	}
 	.editor .item:hover .edit{
     	display: block;
+	}
+
+	.pagination{
+    	text-align: center;
+		margin-top: 10px;
+    	padding: 5px 0;
+		background: var(--background);
 	}
 
 	@media only screen and (max-width: 600px){
