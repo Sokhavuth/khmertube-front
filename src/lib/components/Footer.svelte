@@ -1,7 +1,6 @@
 <!--src/layouts/Footer.svelte-->
 <section class="Footer">
     <footer class="wrapper">
-        <p class="login"><a href="https://khmerweb-tv.deno.dev/admin">ចូល​ក្នុង</a> | <a href="https://khmerweb-tv.deno.dev/admin/user">ចុះ​ឈ្មោះ</a></p>
         <p>Copyright &copy;2025 Khmer Web</p>
         <p>Powered by <a target="_blank" href="https://kit.svelte.dev/">Sveltekit</a> & <a target="_blank" href="https://hono.dev/">Hono</a> & <a target="_blank" href="https://account.mongodb.com/">MongoDB</a></p>
     </footer>
