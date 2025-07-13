@@ -54,7 +54,7 @@ function myFunction() {
             <div data-sveltekit-reload class="topnav" class:responsive={isresponsive} id="myTopnav">
                 <a href="/" class="home {home}">ទំព័រ​ដើម</a>
                 <div class="dropdown {news}">
-                  <button class={`dropbtn `}>ព័ត៌មាន
+                  <button class={`dropbtn ${news}`}>ព័ត៌មាន
                     <i class="fa fa-caret-down"></i>
                   </button>
                   <div class="dropdown-content">
@@ -66,7 +66,7 @@ function myFunction() {
                 <a href="/doc/1" class={`doc ${doc}`}>ឯកសារ</a>
                 <a href="/sport/1" class={`sport ${sport}`}>កីឡា</a>
                 <div class={`dropdown ${movie}`}>
-                  <button class={`dropbtn `}>ភាពយន្ត
+                  <button class={`dropbtn ${movie}`}>ភាពយន្ត
                     <i class="fa fa-caret-down"></i>
                   </button>
                   <div class="dropdown-content">
@@ -81,7 +81,7 @@ function myFunction() {
                 <a href="/travel/1" class={`travel ${travel}`}>ដើរ​លេង</a>
                 <a href="/game/1" class={`game ${game}`}>ពិភព​និមិ្មត</a>
                 <div class={`dropdown ${entertainment}`}>
-                  <button class={`dropbtn `}>កំសាន្ត
+                  <button class={`dropbtn ${entertainment}`}>កំសាន្ត
                     <i class="fa fa-caret-down"></i>
                   </button>
                   <div class="dropdown-content">
@@ -121,7 +121,7 @@ nav{
     background-color: rgb(44, 44, 44);
     color: white;
   }
-  .topnav a.active, div.active {
+  .topnav a.active, div.active, .dropbtn.active {
     background-color: rgb(44, 44, 44);
     color: white;
   }
