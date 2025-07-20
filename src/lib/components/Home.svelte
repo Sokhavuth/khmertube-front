@@ -360,7 +360,7 @@
                 <p class="movies-label">{data.counts.sport} កីឡា</p>
                 <span class='playing'>កំពុង​លេង...</span>
             </button>
-            <button onclick={()=>changeCategory(videoPlaylists.doc, 'កំរង​ឯកសារ​​​​​', rawPlaylist.doc, 5)}>
+            <button onclick={()=>changeCategory(videoPlaylists.doc, '​ឯកសារ​​​​​', rawPlaylist.doc, 5)}>
                 <img alt='' src={playlistThumbs.doc} />
                 <p class="movies-label">{data.counts.doc} ឯកសារ</p>
                 <span class='playing'>កំពុង​លេង...</span>
