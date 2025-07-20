@@ -436,8 +436,8 @@
         padding: 10px 0 0;
     }
     .random-video .wrapper{
-        grid-column: var(--grid-column);
-        grid-row: var(--grid-row);
+        grid-column: 2;
+        grid-row: 2;
         position: relative;
         padding-top: 53%;
     }
