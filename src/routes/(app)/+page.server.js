@@ -4,7 +4,7 @@ export async function load({ locals, fetch, cookies }) {
     const settings = await locals.settings(locals)
     const response = await fetch(`${locals.apiUrl}/api?amount=${settings.frontend}`)
     const data = await response.json()
-
+/*
     function getRandomIntInclusive(min, max) {
         min = Math.ceil(min);
         max = Math.floor(max);
@@ -29,11 +29,11 @@ export async function load({ locals, fetch, cookies }) {
             continue
         }
     }
-
+*/
     data.settings = settings
     data.pageURL = '/'
     data.title = 'ទំព័រដើម'
-    data.screenPosition = screenPosition
+    //data.screenPosition = screenPosition
 
     return data
 }
