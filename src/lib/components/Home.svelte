@@ -8,9 +8,6 @@
     const laodingVideo = 'NcQQVbioeZk'
     const pageAmount = Math.ceil(data.count/data.settings.frontend)
 
-    //const column = data.screenPosition.column
-    //const row = data.screenPosition.row
-
     function parseVideos(posts){
         let videos = []
         let thumbs = []
@@ -380,7 +377,7 @@
                 <p class="news-label">{data.counts.distraction} ល្បែងកំសាន្ត​</p>
                 <span class='playing'>កំពុង​លេង...</span>
             </button>
-            <div class="wrapper" style="--grid-column: {2} / span 2;--grid-row: {2} / span 2;">
+            <div class="wrapper">
                 <div id={ytPlayerId}></div>
                 <div class="latest-video">ព័ត៌មាន</div>
                 <div class="channel-logo">
