@@ -83,7 +83,7 @@
         text-align: left;
         color: rgb(88, 88, 88);
         font-family: Moul;
-        font-size: 25px;
+        font-size: 22px;
     }
     header .inner .search{
         text-align: center;
