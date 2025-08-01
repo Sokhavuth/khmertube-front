@@ -65,8 +65,18 @@
         videos = [...videos]
         json = JSON.stringify(videos)
     }
-</script>
 
+    $effect(()=>{
+        const date = new Date()
+        const offsetMs = date.getTimezoneOffset() * 60 * 1000
+        const dt = new Date(date.getTime() - offsetMs)
+        const datetime = dt.toISOString()
+        const now = datetime.split('.')[0]
+        const element = document.querySelector('input[type="datetime-local"]')
+        element.value = now
+    })
+    
+    </script>
 <Layout { data } >
     {#snippet editor()}
     <div class="Editor">
