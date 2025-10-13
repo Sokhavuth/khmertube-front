@@ -6,8 +6,8 @@
     const dark = 'brightness(20%)'
     const normal = 'brightness(100%)'
     const laodingVideo = 'NcQQVbioeZk'
-    const pageAmount = Math.ceil(data.count/data.settings.frontend)
-
+    let pageAmount = $state(Math.ceil(data.counts.latest/data.settings.frontend))
+    let category = $state('news')
     function parseVideos(posts){
         let videos = []
         let thumbs = []
@@ -141,6 +141,12 @@
         if(obj){posts = obj}
         if(label){player.label = label}
         if(playlist){player.playlist = playlist}
+        pageAmount = Math.ceil(data.counts[playlist.category]/data.settings.frontend)
+        if(player.playlist.category === 'latest'){
+            category = 'news'
+        }else{
+            category = player.playlist.category
+        }
         if(player.playlist.category === 'latest'){
             jq(`.random-video button:nth-child(${player.thumb}) img`).css({'filter':normal})
             jq(`.random-video button:nth-child(${player.thumb}) .playing`).css({'display':'none'})
@@ -416,7 +422,7 @@
     </div>
     <div class="navigation">
         <span>ទំព័រ </span>
-        <select onchange={(event)=>{document.location = `/${event.target.value}`}}>
+        <select onchange={(event)=>{document.location = `/${category}/${event.target.value}`}}>
             {#each [...Array(pageAmount).keys()] as pageNumber}
                 <option>{pageNumber+1}</option>
             {/each}
