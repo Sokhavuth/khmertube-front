@@ -75,7 +75,7 @@ function myFunction() {
                     <a href="/Chinese/1">រឿង​ចិន</a>
                     <a href="/Korean/1">រឿង​កូរ៉េ</a>
                     <a href="/world/1">​រឿង​បរទេស</a>
-                    <a href="/movie/1">​ឥត​ព្រៀង​ទុក</a>
+                    <a href="/movies/1">​ឥត​ព្រៀង​ទុក</a>
                   </div>
                 </div>
                 <a href="/travel/1" class={`travel ${travel}`}>ដើរ​លេង</a>
