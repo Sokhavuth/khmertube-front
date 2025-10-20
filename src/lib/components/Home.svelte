@@ -37,6 +37,8 @@
     latestMusic.category = 'music'
     let latestFood = parseVideos(data.postsByCategory[7])
     latestFood.category = 'food'
+    let latestWeb = parseVideos(data.postsByCategory[8])
+    latestWeb.category = 'web'
     
     let rawPlaylist = $state({
         latest: data.latestPosts,
@@ -47,7 +49,8 @@
         doc: data.postsByCategory[4],
         distraction: data.postsByCategory[5],
         music: data.postsByCategory[6],
-        food: data.postsByCategory[7]
+        food: data.postsByCategory[7],
+        web: data.postsByCategory[8]
     })
 
     let videoPlaylists = $state({
@@ -59,7 +62,8 @@
         doc: latestDoc,
         distraction: latestDistraction,
         music: latestMusic,
-        food: latestFood
+        food: latestFood,
+        web: latestWeb
     })
 
     let playlistThumbs = $state({
@@ -91,7 +95,7 @@
         return newPlaylist
 	}
 
-    async function newPlaylist(){
+    async function newPlaylist(event){
         player.unMute()
         if(player.playlist.category !== 'latest'){
             player.loadVideoById(laodingVideo)
@@ -391,6 +395,7 @@
                 </div>
                 <div class="play-all">
                     <button onclick={()=>changeCategory(latestVideos, 'ព័ត៌មាន', data.latestPosts)} class='center'>ព័ត៌មាន</button>
+                    <button onclick={()=>changeCategory(latestWeb, 'គេហទំព័រ', rawPlaylist.web)} class='center'>គេហទំព័រ</button>
                     <button onclick={()=>nextPrevious('previous')}>វីដេអូមុន</button>
                     <button onclick={newPlaylist} class='new-playlist'>ដូរ​កំរង​វីដេអូ​</button>
                     <button onclick={()=>nextPrevious('next')}>វីដេអូបន្ទាប់</button>

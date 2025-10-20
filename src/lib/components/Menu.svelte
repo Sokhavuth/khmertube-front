@@ -14,6 +14,7 @@ let contact = $state('')
 let about = $state('')
 let game = $state('')
 let entertainment = $state('')
+let web = $state('')
 
 if(data.pageURL === '/'){
     home = 'active'
@@ -39,6 +40,8 @@ if(data.pageURL === '/'){
     game = 'active'
 }else if(data.pageURL === 'entertainment'){
   entertainment = 'active'
+}else if(data.pageURL === 'web'){
+  web = 'active'
 }
 
 function myFunction() {
@@ -88,6 +91,15 @@ function myFunction() {
                     <a href="/food/1">មុខ​ម្ហូប</a>
                     <a href="/music/1">របាំតន្ត្រី</a>
                     <a href="/distraction/1">ល្បែង​កំសាន្ត</a>
+                  </div>
+                </div>
+                <div class="dropdown {web}">
+                  <button class={`dropbtn ${web}`}>គេហទំព័រ
+                    <i class="fa fa-caret-down"></i>
+                  </button>
+                  <div class="dropdown-content">
+                    <a href="/Node.js/1">Node.js</a>
+                    <a href="/Python/1">Python</a>
                   </div>
                 </div>
                 <a href="/page/66b17b1e944f187d47506cda" class={`contact ${contact}`}>ទំនាក់ទំនង</a>

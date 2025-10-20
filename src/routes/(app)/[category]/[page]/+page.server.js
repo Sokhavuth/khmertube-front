@@ -44,6 +44,10 @@ export async function load({ locals, params, fetch, cookies }) {
         pageURL = 'entertainment'
     }else if(category === 'distraction'){
         pageURL = 'entertainment'
+    }else if(category === 'Node.js'){
+        pageURL = 'web'
+    }else if(category === 'Python'){
+        pageURL = 'web'
     }
 
     return {posts, count, category, settings, currentPage, lastPage, pageURL, title}

@@ -20,7 +20,10 @@
         game: 'ពិភព​និម្មិត',
         food: 'មុខ​ម្ហូប',
         music: 'របាំ​តន្ត្រី',
-        distraction: 'ល្បែង​កំសាន្ត'
+        distraction: 'ល្បែង​កំសាន្ត',
+        web: 'គេហទំព័រ',
+        "Node.js": 'Node.js',
+        Python: 'Python'
     }
 
     let postCategories = $state(data.post.categories.split(","))
