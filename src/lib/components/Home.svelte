@@ -151,7 +151,7 @@
         }else{
             category = player.playlist.category
         }
-        if(player.playlist.category === 'latest'){
+        if((player.playlist.category === 'latest') || (player.playlist.category === 'web')){
             jq(`.random-video button:nth-child(${player.thumb}) img`).css({'filter':normal})
             jq(`.random-video button:nth-child(${player.thumb}) .playing`).css({'display':'none'})
         }
