@@ -23,7 +23,8 @@
         distraction: 'ល្បែង​កំសាន្ត',
         web: 'គេហទំព័រ',
         "Node.js": 'Node.js',
-        Python: 'Python'
+        Python: 'Python',
+        Rust: 'Rust'
     }
 
     let postCategories = $state(data.post.categories.split(","))
