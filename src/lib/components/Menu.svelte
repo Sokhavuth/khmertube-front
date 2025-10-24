@@ -100,6 +100,7 @@ function myFunction() {
                   <div class="dropdown-content">
                     <a href="/Node.js/1">Node.js</a>
                     <a href="/Python/1">Python</a>
+                    <a href="/Rust/1">Rust</a>
                   </div>
                 </div>
                 <a href="/page/66b17b1e944f187d47506cda" class={`contact ${contact}`}>ទំនាក់ទំនង</a>
