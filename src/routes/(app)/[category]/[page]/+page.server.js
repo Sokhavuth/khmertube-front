@@ -48,6 +48,8 @@ export async function load({ locals, params, fetch, cookies }) {
         pageURL = 'web'
     }else if(category === 'Python'){
         pageURL = 'web'
+    }else if(category === 'Go'){
+        pageURL = 'web'
     }else if(category === 'Rust'){
         pageURL = 'web'
     }
