@@ -100,7 +100,7 @@ function myFunction() {
                   <div class="dropdown-content">
                     <a href="/Node.js/1">Node.js</a>
                     <a href="/Python/1">Python</a>
-                    <a href="/Python/1">Go</a>
+                    <a href="/Go/1">Go</a>
                     <a href="/Rust/1">Rust</a>
                   </div>
                 </div>
