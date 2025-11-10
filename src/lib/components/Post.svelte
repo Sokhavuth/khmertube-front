@@ -24,7 +24,8 @@
         web: 'គេហទំព័រ',
         "Node.js": 'Node.js',
         Python: 'Python',
-        Rust: 'Rust'
+        Rust: 'Rust',
+        Go: 'Go'
     }
 
     let postCategories = $state(data.post.categories.split(","))
