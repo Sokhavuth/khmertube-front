@@ -314,6 +314,8 @@
             width: '640',
             videoId: initialVideoId,
             playerVars: {
+                'cc_load_policy': 1,
+                'cc_lang_pref': 'en',
                 'playsinline': 1,
                 "enablejsapi": 1,
                 "mute": 1,

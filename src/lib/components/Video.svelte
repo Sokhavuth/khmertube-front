@@ -22,6 +22,8 @@ function setScreen(video,id,click){
         url = `https://player.vimeo.com/video/${video['id']}`
     }else if(video['type'] === "Dailymotion"){
         url = `https://www.dailymotion.com/embed/video/${video['id']}`
+    }else if(video['type'] === "iQIYI"){
+        url = `https://em.iq.com/player.html?id=${video['id']}`
     }
 }
 

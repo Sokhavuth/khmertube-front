@@ -106,6 +106,7 @@
             <select name='type' bind:value={type} >
                 <option>YouTube</option>
                 <option>YouTubePlaylist</option>
+                <option>iQIYI</option>
                 <option>Facebook</option>
                 <option>OK</option>
                 <option>Dailymotion</option>
